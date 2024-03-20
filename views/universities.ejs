@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities</title>
+</head>
+<body>
+    <form action="/search">
+        <input name="name" type="text" placeholder="University name">
+        <input name="country" type="hidden" value="morocco">
+        <button>Search</button>
+    </form>
+    <br/>
+    <table>
+        <thead>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Country</th>
+        </thead>
+        <tbody>
+            <% for(uni of universities) { %>
+                <tr>
+                    <td><%= uni.alpha_two_code %></td>
+                    <td><%= uni.name %></td>
+                    <td><%= uni.country %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
